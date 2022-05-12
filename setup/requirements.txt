@@ -4,17 +4,11 @@ requests
 timestring
 aes-everywhere
 pycryptodome
-fastapi
-uvicorn
-pyjwt
-Jinja2
 rich
 pyautoit
 pytesseract
 psutil
 pynput
 numpy
-httpx_socks
-httpx
 asyncio
 customtkinter
