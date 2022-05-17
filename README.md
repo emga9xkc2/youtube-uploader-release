@@ -14,4 +14,4 @@ https://github.com/emga9xkc2/youtube-uploader-release/archive/refs/heads/main.zi
 
 <b>4. Thông tin phiên bản</b>
 
-- v1.6
+- v1.7
