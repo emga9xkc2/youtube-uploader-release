@@ -10,6 +10,8 @@ https://github.com/emga9xkc2/youtube-uploader-release/archive/refs/heads/main.zi
 
 <b>3. Hướng dẫn sử dụng</b>
 
+- Bấm menu. Mở file hconfig. Thêm dòng port={portmultilogin} để sử dụng get cookie của multilogin
+
 <b>4. Thông tin phiên bản</b>
 
-- v1.5
+- v1.6
