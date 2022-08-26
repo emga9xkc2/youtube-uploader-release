@@ -12,28 +12,28 @@ from tkinter.constants import *
 
 import gui_support
 
+
 class Toplevel1:
     def __init__(self, top=None):
-        '''This class configures and populates the toplevel window.
-           top is the toplevel containing window.'''
-        _bgcolor = '#d9d9d9'  # X11 color: 'gray85'
-        _fgcolor = '#000000'  # X11 color: 'black'
-        _compcolor = '#d9d9d9' # X11 color: 'gray85'
-        _ana1color = '#d9d9d9' # X11 color: 'gray85'
-        _ana2color = '#ececec' # Closest X11 color: 'gray92'
+        """This class configures and populates the toplevel window.
+        top is the toplevel containing window."""
+        _bgcolor = "#d9d9d9"  # X11 color: 'gray85'
+        _fgcolor = "#000000"  # X11 color: 'black'
+        _compcolor = "#d9d9d9"  # X11 color: 'gray85'
+        _ana1color = "#d9d9d9"  # X11 color: 'gray85'
+        _ana2color = "#ececec"  # Closest X11 color: 'gray92'
         self.style = ttk.Style()
         if sys.platform == "win32":
-            self.style.theme_use('winnative')
-        self.style.configure('.',background=_bgcolor)
-        self.style.configure('.',foreground=_fgcolor)
-        self.style.configure('.',font="TkDefaultFont")
-        self.style.map('.',background=
-            [('selected', _compcolor), ('active',_ana2color)])
+            self.style.theme_use("winnative")
+        self.style.configure(".", background=_bgcolor)
+        self.style.configure(".", foreground=_fgcolor)
+        self.style.configure(".", font="TkDefaultFont")
+        self.style.map(".", background=[("selected", _compcolor), ("active", _ana2color)])
 
         top.geometry("824x504+267+122")
         top.minsize(120, 1)
         top.maxsize(1924, 1061)
-        top.resizable(1,  1)
+        top.resizable(1, 1)
         top.title("Toplevel 0")
         top.configure(background="#d9d9d9")
         top.configure(highlightbackground="#d9d9d9")
@@ -44,32 +44,42 @@ class Toplevel1:
         self.checkCommentGhim = tk.IntVar()
         self.checkRenderVideo = tk.IntVar()
 
-        self.style.configure('TNotebook.Tab', background=_bgcolor)
-        self.style.configure('TNotebook.Tab', foreground=_fgcolor)
-        self.style.map('TNotebook.Tab', background=
-            [('selected', _compcolor), ('active',_ana2color)])
+        self.style.configure("TNotebook.Tab", background=_bgcolor)
+        self.style.configure("TNotebook.Tab", foreground=_fgcolor)
+        self.style.map("TNotebook.Tab", background=[("selected", _compcolor), ("active", _ana2color)])
         self.TNotebook1 = ttk.Notebook(self.top)
-        self.TNotebook1.place(relx=0.011, rely=0.02, relheight=0.903
-                , relwidth=0.976)
+        self.TNotebook1.place(relx=0.011, rely=0.02, relheight=0.903, relwidth=0.976)
         self.TNotebook1.configure(takefocus="")
         self.TNotebook1_t1 = tk.Frame(self.TNotebook1)
         self.TNotebook1.add(self.TNotebook1_t1, padding=3)
-        self.TNotebook1.tab(0, text='''Trang chủ''', compound="left"
-                ,underline='''-1''', )
+        self.TNotebook1.tab(
+            0,
+            text="""Trang chủ""",
+            compound="left",
+            underline="""-1""",
+        )
         self.TNotebook1_t1.configure(background="#d9d9d9")
         self.TNotebook1_t1.configure(highlightbackground="#d9d9d9")
         self.TNotebook1_t1.configure(highlightcolor="black")
         self.TNotebook1_t2 = tk.Frame(self.TNotebook1)
         self.TNotebook1.add(self.TNotebook1_t2, padding=3)
-        self.TNotebook1.tab(1, text='''Cài đặt''', compound="left"
-                ,underline='''-1''', )
+        self.TNotebook1.tab(
+            1,
+            text="""Cài đặt""",
+            compound="left",
+            underline="""-1""",
+        )
         self.TNotebook1_t2.configure(background="#d9d9d9")
         self.TNotebook1_t2.configure(highlightbackground="#d9d9d9")
         self.TNotebook1_t2.configure(highlightcolor="black")
         self.TNotebook1_t3 = tk.Frame(self.TNotebook1)
         self.TNotebook1.add(self.TNotebook1_t3, padding=3)
-        self.TNotebook1.tab(2, text='''Log''', compound="left", underline='''-1'''
-                ,)
+        self.TNotebook1.tab(
+            2,
+            text="""Log""",
+            compound="left",
+            underline="""-1""",
+        )
         self.TNotebook1_t3.configure(background="#d9d9d9")
         self.TNotebook1_t3.configure(highlightbackground="#d9d9d9")
         self.TNotebook1_t3.configure(highlightcolor="black")
@@ -79,58 +89,57 @@ class Toplevel1:
         self.btnImport.configure(activebackground="#ececec")
         self.btnImport.configure(activeforeground="#000000")
         self.btnImport.configure(background="#d9d9d9")
-        self.btnImport.configure(compound='left')
+        self.btnImport.configure(compound="left")
         self.btnImport.configure(disabledforeground="#a3a3a3")
         self.btnImport.configure(foreground="#000000")
         self.btnImport.configure(highlightbackground="#d9d9d9")
         self.btnImport.configure(highlightcolor="black")
         self.btnImport.configure(pady="0")
-        self.btnImport.configure(text='''Import''')
+        self.btnImport.configure(text="""Import""")
 
-        self.style.configure('Treeview',  font="TkDefaultFont")
+        self.style.configure("Treeview", font="TkDefaultFont")
         self.Scrolledtreeview1 = ScrolledTreeView(self.TNotebook1_t1)
-        self.Scrolledtreeview1.place(relx=0.0, rely=0.021, relheight=0.816
-                , relwidth=0.998)
+        self.Scrolledtreeview1.place(relx=0.0, rely=0.021, relheight=0.816, relwidth=0.998)
         self.Scrolledtreeview1.configure(columns="Col1")
         # build_treeview_support starting.
-        self.Scrolledtreeview1.heading("#0",text="Tree")
-        self.Scrolledtreeview1.heading("#0",anchor="center")
-        self.Scrolledtreeview1.column("#0",width="389")
-        self.Scrolledtreeview1.column("#0",minwidth="20")
-        self.Scrolledtreeview1.column("#0",stretch="1")
-        self.Scrolledtreeview1.column("#0",anchor="w")
-        self.Scrolledtreeview1.heading("Col1",text="Col1")
-        self.Scrolledtreeview1.heading("Col1",anchor="center")
-        self.Scrolledtreeview1.column("Col1",width="390")
-        self.Scrolledtreeview1.column("Col1",minwidth="20")
-        self.Scrolledtreeview1.column("Col1",stretch="1")
-        self.Scrolledtreeview1.column("Col1",anchor="w")
+        self.Scrolledtreeview1.heading("#0", text="Tree")
+        self.Scrolledtreeview1.heading("#0", anchor="center")
+        self.Scrolledtreeview1.column("#0", width="389")
+        self.Scrolledtreeview1.column("#0", minwidth="20")
+        self.Scrolledtreeview1.column("#0", stretch="1")
+        self.Scrolledtreeview1.column("#0", anchor="w")
+        self.Scrolledtreeview1.heading("Col1", text="Col1")
+        self.Scrolledtreeview1.heading("Col1", anchor="center")
+        self.Scrolledtreeview1.column("Col1", width="390")
+        self.Scrolledtreeview1.column("Col1", minwidth="20")
+        self.Scrolledtreeview1.column("Col1", stretch="1")
+        self.Scrolledtreeview1.column("Col1", anchor="w")
 
         self.btnUpload = tk.Button(self.TNotebook1_t1)
         self.btnUpload.place(relx=0.239, rely=0.881, height=34, width=107)
         self.btnUpload.configure(activebackground="#ececec")
         self.btnUpload.configure(activeforeground="#000000")
         self.btnUpload.configure(background="#d9d9d9")
-        self.btnUpload.configure(compound='left')
+        self.btnUpload.configure(compound="left")
         self.btnUpload.configure(disabledforeground="#a3a3a3")
         self.btnUpload.configure(foreground="#000000")
         self.btnUpload.configure(highlightbackground="#d9d9d9")
         self.btnUpload.configure(highlightcolor="black")
         self.btnUpload.configure(pady="0")
-        self.btnUpload.configure(text='''Upload''')
+        self.btnUpload.configure(text="""Upload""")
 
         self.btnGetCookies2 = tk.Button(self.TNotebook1_t1)
         self.btnGetCookies2.place(relx=0.45, rely=0.881, height=34, width=107)
         self.btnGetCookies2.configure(activebackground="#ececec")
         self.btnGetCookies2.configure(activeforeground="#000000")
         self.btnGetCookies2.configure(background="#d9d9d9")
-        self.btnGetCookies2.configure(compound='left')
+        self.btnGetCookies2.configure(compound="left")
         self.btnGetCookies2.configure(disabledforeground="#a3a3a3")
         self.btnGetCookies2.configure(foreground="#000000")
         self.btnGetCookies2.configure(highlightbackground="#d9d9d9")
         self.btnGetCookies2.configure(highlightcolor="black")
         self.btnGetCookies2.configure(pady="0")
-        self.btnGetCookies2.configure(text='''Get Cookies''')
+        self.btnGetCookies2.configure(text="""Get Cookies""")
 
         self.txtSoLuong = tk.Entry(self.TNotebook1_t2)
         self.txtSoLuong.place(relx=0.188, rely=0.023, height=21, relwidth=0.093)
@@ -145,8 +154,7 @@ class Toplevel1:
         self.txtSoLuong.configure(selectforeground="white")
 
         self.txtSoVideoToiDa = tk.Entry(self.TNotebook1_t2)
-        self.txtSoVideoToiDa.place(relx=0.188, rely=0.072, height=21
-                , relwidth=0.093)
+        self.txtSoVideoToiDa.place(relx=0.188, rely=0.072, height=21, relwidth=0.093)
         self.txtSoVideoToiDa.configure(background="white")
         self.txtSoVideoToiDa.configure(disabledforeground="#a3a3a3")
         self.txtSoVideoToiDa.configure(font="TkFixedFont")
@@ -158,8 +166,7 @@ class Toplevel1:
         self.txtSoVideoToiDa.configure(selectforeground="white")
 
         self.txtKeyactive = tk.Entry(self.TNotebook1_t2)
-        self.txtKeyactive.place(relx=0.188, rely=0.126, height=21
-                , relwidth=0.343)
+        self.txtKeyactive.place(relx=0.188, rely=0.126, height=21, relwidth=0.343)
         self.txtKeyactive.configure(background="white")
         self.txtKeyactive.configure(disabledforeground="#a3a3a3")
         self.txtKeyactive.configure(font="TkFixedFont")
@@ -171,31 +178,29 @@ class Toplevel1:
         self.txtKeyactive.configure(selectforeground="white")
 
         self.check1 = tk.Checkbutton(self.TNotebook1_t2)
-        self.check1.place(relx=0.013, rely=0.186, relheight=0.058
-                , relwidth=0.165)
+        self.check1.place(relx=0.013, rely=0.186, relheight=0.058, relwidth=0.165)
         self.check1.configure(activebackground="#ececec")
         self.check1.configure(activeforeground="#000000")
-        self.check1.configure(anchor='w')
+        self.check1.configure(anchor="w")
         self.check1.configure(background="#d9d9d9")
-        self.check1.configure(compound='left')
+        self.check1.configure(compound="left")
         self.check1.configure(disabledforeground="#a3a3a3")
         self.check1.configure(foreground="#000000")
         self.check1.configure(highlightbackground="#d9d9d9")
         self.check1.configure(highlightcolor="black")
-        self.check1.configure(justify='left')
-        self.check1.configure(text='''Bình luận và ghim''')
+        self.check1.configure(justify="left")
+        self.check1.configure(text="""Bình luận và ghim""")
         self.check1.configure(variable=self.checkCommentGhim)
 
         self.Message1 = tk.Message(self.TNotebook1_t2)
-        self.Message1.place(relx=0.0, rely=0.023, relheight=0.044
-                , relwidth=0.088)
+        self.Message1.place(relx=0.0, rely=0.023, relheight=0.044, relwidth=0.088)
         self.Message1.configure(background="#d9d9d9")
         self.Message1.configure(foreground="#000000")
         self.Message1.configure(highlightbackground="#d9d9d9")
         self.Message1.configure(highlightcolor="black")
         self.Message1.configure(padx="1")
         self.Message1.configure(pady="1")
-        self.Message1.configure(text='''Số luồng''')
+        self.Message1.configure(text="""Số luồng""")
         self.Message1.configure(width=70)
 
         self.Message2 = tk.Message(self.TNotebook1_t2)
@@ -207,53 +212,49 @@ class Toplevel1:
         self.Message2.configure(highlightcolor="black")
         self.Message2.configure(padx="1")
         self.Message2.configure(pady="1")
-        self.Message2.configure(text='''Số video tối đa''')
+        self.Message2.configure(text="""Số video tối đa""")
         self.Message2.configure(width=100)
 
         self.Message3 = tk.Message(self.TNotebook1_t2)
-        self.Message3.place(relx=0.0, rely=0.128, relheight=0.044
-                , relwidth=0.113)
+        self.Message3.place(relx=0.0, rely=0.128, relheight=0.044, relwidth=0.113)
         self.Message3.configure(background="#d9d9d9")
         self.Message3.configure(foreground="#000000")
         self.Message3.configure(highlightbackground="#d9d9d9")
         self.Message3.configure(highlightcolor="black")
         self.Message3.configure(padx="1")
         self.Message3.configure(pady="1")
-        self.Message3.configure(text='''Key kích hoạt''')
+        self.Message3.configure(text="""Key kích hoạt""")
         self.Message3.configure(width=91)
 
         self.Message3_1 = tk.Message(self.TNotebook1_t2)
-        self.Message3_1.place(relx=0.0, rely=0.256, relheight=0.044
-                , relwidth=0.063)
+        self.Message3_1.place(relx=0.0, rely=0.256, relheight=0.044, relwidth=0.063)
         self.Message3_1.configure(background="#d9d9d9")
         self.Message3_1.configure(foreground="#000000")
         self.Message3_1.configure(highlightbackground="#d9d9d9")
         self.Message3_1.configure(highlightcolor="black")
         self.Message3_1.configure(padx="1")
         self.Message3_1.configure(pady="1")
-        self.Message3_1.configure(text='''Proxy''')
+        self.Message3_1.configure(text="""Proxy""")
         self.Message3_1.configure(width=50)
 
         self.comboProxy = ttk.Combobox(self.TNotebook1_t2)
-        self.comboProxy.place(relx=0.188, rely=0.256, relheight=0.049
-                , relwidth=0.18)
+        self.comboProxy.place(relx=0.188, rely=0.256, relheight=0.049, relwidth=0.18)
         self.comboProxy.configure(textvariable=self.combobox)
         self.comboProxy.configure(takefocus="")
 
         self.check1_1 = tk.Checkbutton(self.TNotebook1_t2)
-        self.check1_1.place(relx=0.188, rely=0.186, relheight=0.058
-                , relwidth=0.165)
+        self.check1_1.place(relx=0.188, rely=0.186, relheight=0.058, relwidth=0.165)
         self.check1_1.configure(activebackground="#ececec")
         self.check1_1.configure(activeforeground="#000000")
-        self.check1_1.configure(anchor='w')
+        self.check1_1.configure(anchor="w")
         self.check1_1.configure(background="#d9d9d9")
-        self.check1_1.configure(compound='left')
+        self.check1_1.configure(compound="left")
         self.check1_1.configure(disabledforeground="#a3a3a3")
         self.check1_1.configure(foreground="#000000")
         self.check1_1.configure(highlightbackground="#d9d9d9")
         self.check1_1.configure(highlightcolor="black")
-        self.check1_1.configure(justify='left')
-        self.check1_1.configure(text='''Render video''')
+        self.check1_1.configure(justify="left")
+        self.check1_1.configure(text="""Render video""")
         self.check1_1.configure(variable=self.checkRenderVideo)
 
         self.txtLog = tk.Text(self.TNotebook1_t3)
@@ -268,8 +269,8 @@ class Toplevel1:
         self.txtLog.configure(selectforeground="white")
         self.txtLog.configure(wrap="word")
 
-        self.menubar = tk.Menu(top,font="TkMenuFont",bg=_bgcolor,fg=_fgcolor)
-        top.configure(menu = self.menubar)
+        self.menubar = tk.Menu(top, font="TkMenuFont", bg=_bgcolor, fg=_fgcolor)
+        top.configure(menu=self.menubar)
 
         self.txtStatus = tk.Entry(self.top)
         self.txtStatus.place(relx=0.012, rely=0.933, height=20, relwidth=0.478)
@@ -295,41 +296,43 @@ class Toplevel1:
         self.txtHsd.configure(selectbackground="blue")
         self.txtHsd.configure(selectforeground="white")
 
+
 # The following code is added to facilitate the Scrolled widgets you specified.
 class AutoScroll(object):
-    '''Configure the scrollbars for a widget.'''
+    """Configure the scrollbars for a widget."""
+
     def __init__(self, master):
         #  Rozen. Added the try-except clauses so that this class
         #  could be used for scrolled entry widget for which vertical
         #  scrolling is not supported. 5/7/14.
         try:
-            vsb = ttk.Scrollbar(master, orient='vertical', command=self.yview)
+            vsb = ttk.Scrollbar(master, orient="vertical", command=self.yview)
         except:
             pass
-        hsb = ttk.Scrollbar(master, orient='horizontal', command=self.xview)
+        hsb = ttk.Scrollbar(master, orient="horizontal", command=self.xview)
         try:
             self.configure(yscrollcommand=self._autoscroll(vsb))
         except:
             pass
         self.configure(xscrollcommand=self._autoscroll(hsb))
-        self.grid(column=0, row=0, sticky='nsew')
+        self.grid(column=0, row=0, sticky="nsew")
         try:
-            vsb.grid(column=1, row=0, sticky='ns')
+            vsb.grid(column=1, row=0, sticky="ns")
         except:
             pass
-        hsb.grid(column=0, row=1, sticky='ew')
+        hsb.grid(column=0, row=1, sticky="ew")
         master.grid_columnconfigure(0, weight=1)
         master.grid_rowconfigure(0, weight=1)
         # Copy geometry methods of master  (taken from ScrolledText.py)
-        methods = tk.Pack.__dict__.keys() | tk.Grid.__dict__.keys() \
-                  | tk.Place.__dict__.keys()
+        methods = tk.Pack.__dict__.keys() | tk.Grid.__dict__.keys() | tk.Place.__dict__.keys()
         for meth in methods:
-            if meth[0] != '_' and meth not in ('config', 'configure'):
+            if meth[0] != "_" and meth not in ("config", "configure"):
                 setattr(self, meth, getattr(master, meth))
 
     @staticmethod
     def _autoscroll(sbar):
-        '''Hide and show scrollbar as needed.'''
+        """Hide and show scrollbar as needed."""
+
         def wrapped(first, last):
             first, last = float(first), float(last)
             if first <= 0 and last >= 1:
@@ -337,78 +340,89 @@ class AutoScroll(object):
             else:
                 sbar.grid()
             sbar.set(first, last)
+
         return wrapped
 
     def __str__(self):
         return str(self.master)
 
+
 def _create_container(func):
-    '''Creates a ttk Frame with a given master, and use this new frame to
-    place the scrollbars and the widget.'''
+    """Creates a ttk Frame with a given master, and use this new frame to
+    place the scrollbars and the widget."""
+
     def wrapped(cls, master, **kw):
         container = ttk.Frame(master)
-        container.bind('<Enter>', lambda e: _bound_to_mousewheel(e, container))
-        container.bind('<Leave>', lambda e: _unbound_to_mousewheel(e, container))
+        container.bind("<Enter>", lambda e: _bound_to_mousewheel(e, container))
+        container.bind("<Leave>", lambda e: _unbound_to_mousewheel(e, container))
         return func(cls, container, **kw)
+
     return wrapped
 
+
 class ScrolledTreeView(AutoScroll, ttk.Treeview):
-    '''A standard ttk Treeview widget with scrollbars that will
-    automatically show/hide as needed.'''
+    """A standard ttk Treeview widget with scrollbars that will
+    automatically show/hide as needed."""
+
     @_create_container
     def __init__(self, master, **kw):
         ttk.Treeview.__init__(self, master, **kw)
         AutoScroll.__init__(self, master)
 
+
 import platform
+
+
 def _bound_to_mousewheel(event, widget):
     child = widget.winfo_children()[0]
-    if platform.system() == 'Windows' or platform.system() == 'Darwin':
-        child.bind_all('<MouseWheel>', lambda e: _on_mousewheel(e, child))
-        child.bind_all('<Shift-MouseWheel>', lambda e: _on_shiftmouse(e, child))
+    if platform.system() == "Windows" or platform.system() == "Darwin":
+        child.bind_all("<MouseWheel>", lambda e: _on_mousewheel(e, child))
+        child.bind_all("<Shift-MouseWheel>", lambda e: _on_shiftmouse(e, child))
     else:
-        child.bind_all('<Button-4>', lambda e: _on_mousewheel(e, child))
-        child.bind_all('<Button-5>', lambda e: _on_mousewheel(e, child))
-        child.bind_all('<Shift-Button-4>', lambda e: _on_shiftmouse(e, child))
-        child.bind_all('<Shift-Button-5>', lambda e: _on_shiftmouse(e, child))
+        child.bind_all("<Button-4>", lambda e: _on_mousewheel(e, child))
+        child.bind_all("<Button-5>", lambda e: _on_mousewheel(e, child))
+        child.bind_all("<Shift-Button-4>", lambda e: _on_shiftmouse(e, child))
+        child.bind_all("<Shift-Button-5>", lambda e: _on_shiftmouse(e, child))
+
 
 def _unbound_to_mousewheel(event, widget):
-    if platform.system() == 'Windows' or platform.system() == 'Darwin':
-        widget.unbind_all('<MouseWheel>')
-        widget.unbind_all('<Shift-MouseWheel>')
+    if platform.system() == "Windows" or platform.system() == "Darwin":
+        widget.unbind_all("<MouseWheel>")
+        widget.unbind_all("<Shift-MouseWheel>")
     else:
-        widget.unbind_all('<Button-4>')
-        widget.unbind_all('<Button-5>')
-        widget.unbind_all('<Shift-Button-4>')
-        widget.unbind_all('<Shift-Button-5>')
+        widget.unbind_all("<Button-4>")
+        widget.unbind_all("<Button-5>")
+        widget.unbind_all("<Shift-Button-4>")
+        widget.unbind_all("<Shift-Button-5>")
+
 
 def _on_mousewheel(event, widget):
-    if platform.system() == 'Windows':
-        widget.yview_scroll(-1*int(event.delta/120),'units')
-    elif platform.system() == 'Darwin':
-        widget.yview_scroll(-1*int(event.delta),'units')
+    if platform.system() == "Windows":
+        widget.yview_scroll(-1 * int(event.delta / 120), "units")
+    elif platform.system() == "Darwin":
+        widget.yview_scroll(-1 * int(event.delta), "units")
     else:
         if event.num == 4:
-            widget.yview_scroll(-1, 'units')
+            widget.yview_scroll(-1, "units")
         elif event.num == 5:
-            widget.yview_scroll(1, 'units')
+            widget.yview_scroll(1, "units")
+
 
 def _on_shiftmouse(event, widget):
-    if platform.system() == 'Windows':
-        widget.xview_scroll(-1*int(event.delta/120), 'units')
-    elif platform.system() == 'Darwin':
-        widget.xview_scroll(-1*int(event.delta), 'units')
+    if platform.system() == "Windows":
+        widget.xview_scroll(-1 * int(event.delta / 120), "units")
+    elif platform.system() == "Darwin":
+        widget.xview_scroll(-1 * int(event.delta), "units")
     else:
         if event.num == 4:
-            widget.xview_scroll(-1, 'units')
+            widget.xview_scroll(-1, "units")
         elif event.num == 5:
-            widget.xview_scroll(1, 'units')
+            widget.xview_scroll(1, "units")
+
+
 def start_up():
     gui_support.main()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     gui_support.main()
-
-
-
-
