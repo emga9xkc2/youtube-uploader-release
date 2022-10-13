@@ -10,7 +10,7 @@ import tkinter as tk
 import tkinter.ttk as ttk
 from tkinter.constants import *
 
-import gui_support
+import form.gui_supportimport customtkinter
 
 
 class Toplevel1:
@@ -22,35 +22,35 @@ class Toplevel1:
         _compcolor = "#d9d9d9"  # X11 color: 'gray85'
         _ana1color = "#d9d9d9"  # X11 color: 'gray85'
         _ana2color = "#ececec"  # Closest X11 color: 'gray92'
-        self.style = ttk.Style()
-        if sys.platform == "win32":
-            self.style.theme_use("winnative")
-        self.style.configure(".", background=_bgcolor)
-        self.style.configure(".", foreground=_fgcolor)
-        self.style.configure(".", font="TkDefaultFont")
-        self.style.map(".", background=[("selected", _compcolor), ("active", _ana2color)])
+        
+        
+            
+        
+        
+        
+        
 
         top.geometry("824x504+267+122")
         top.minsize(120, 1)
         top.maxsize(1924, 1061)
-        top.resizable(1, 1)
+        top.resizable(0, 0)
         top.title("Toplevel 0")
-        top.configure(background="#d9d9d9")
-        top.configure(highlightbackground="#d9d9d9")
-        top.configure(highlightcolor="black")
+        
+
+
 
         self.top = top
         self.combobox = tk.StringVar()
         self.checkCommentGhim = tk.IntVar()
         self.checkRenderVideo = tk.IntVar()
 
-        self.style.configure("TNotebook.Tab", background=_bgcolor)
-        self.style.configure("TNotebook.Tab", foreground=_fgcolor)
-        self.style.map("TNotebook.Tab", background=[("selected", _compcolor), ("active", _ana2color)])
+        
+        
+        
         self.TNotebook1 = ttk.Notebook(self.top)
         self.TNotebook1.place(relx=0.011, rely=0.02, relheight=0.903, relwidth=0.976)
         self.TNotebook1.configure(takefocus="")
-        self.TNotebook1_t1 = tk.Frame(self.TNotebook1)
+        self.TNotebook1_t1 = customtkinter.CTkFrame(self.TNotebook1)
         self.TNotebook1.add(self.TNotebook1_t1, padding=3)
         self.TNotebook1.tab(
             0,
@@ -58,10 +58,10 @@ class Toplevel1:
             compound="left",
             underline="""-1""",
         )
-        self.TNotebook1_t1.configure(background="#d9d9d9")
-        self.TNotebook1_t1.configure(highlightbackground="#d9d9d9")
-        self.TNotebook1_t1.configure(highlightcolor="black")
-        self.TNotebook1_t2 = tk.Frame(self.TNotebook1)
+
+
+
+        self.TNotebook1_t2 = customtkinter.CTkFrame(self.TNotebook1)
         self.TNotebook1.add(self.TNotebook1_t2, padding=3)
         self.TNotebook1.tab(
             1,
@@ -69,10 +69,10 @@ class Toplevel1:
             compound="left",
             underline="""-1""",
         )
-        self.TNotebook1_t2.configure(background="#d9d9d9")
-        self.TNotebook1_t2.configure(highlightbackground="#d9d9d9")
-        self.TNotebook1_t2.configure(highlightcolor="black")
-        self.TNotebook1_t3 = tk.Frame(self.TNotebook1)
+
+
+
+        self.TNotebook1_t3 = customtkinter.CTkFrame(self.TNotebook1)
         self.TNotebook1.add(self.TNotebook1_t3, padding=3)
         self.TNotebook1.tab(
             2,
@@ -80,24 +80,24 @@ class Toplevel1:
             compound="left",
             underline="""-1""",
         )
-        self.TNotebook1_t3.configure(background="#d9d9d9")
-        self.TNotebook1_t3.configure(highlightbackground="#d9d9d9")
-        self.TNotebook1_t3.configure(highlightcolor="black")
 
-        self.btnImport = tk.Button(self.TNotebook1_t1)
+
+
+
+        self.btnImport = customtkinter.CTkButton(self.TNotebook1_t1)
         self.btnImport.place(relx=0.018, rely=0.881, height=34, width=107)
-        self.btnImport.configure(activebackground="#ececec")
-        self.btnImport.configure(activeforeground="#000000")
-        self.btnImport.configure(background="#d9d9d9")
+
+
+
         self.btnImport.configure(compound="left")
-        self.btnImport.configure(disabledforeground="#a3a3a3")
-        self.btnImport.configure(foreground="#000000")
-        self.btnImport.configure(highlightbackground="#d9d9d9")
-        self.btnImport.configure(highlightcolor="black")
+
+
+
+
         self.btnImport.configure(pady="0")
         self.btnImport.configure(text="""Import""")
 
-        self.style.configure("Treeview", font="TkDefaultFont")
+        
         self.Scrolledtreeview1 = ScrolledTreeView(self.TNotebook1_t1)
         self.Scrolledtreeview1.place(relx=0.0, rely=0.021, relheight=0.816, relwidth=0.998)
         self.Scrolledtreeview1.configure(columns="Col1")
@@ -115,89 +115,89 @@ class Toplevel1:
         self.Scrolledtreeview1.column("Col1", stretch="1")
         self.Scrolledtreeview1.column("Col1", anchor="w")
 
-        self.btnUpload = tk.Button(self.TNotebook1_t1)
+        self.btnUpload = customtkinter.CTkButton(self.TNotebook1_t1)
         self.btnUpload.place(relx=0.239, rely=0.881, height=34, width=107)
-        self.btnUpload.configure(activebackground="#ececec")
-        self.btnUpload.configure(activeforeground="#000000")
-        self.btnUpload.configure(background="#d9d9d9")
+
+
+
         self.btnUpload.configure(compound="left")
-        self.btnUpload.configure(disabledforeground="#a3a3a3")
-        self.btnUpload.configure(foreground="#000000")
-        self.btnUpload.configure(highlightbackground="#d9d9d9")
-        self.btnUpload.configure(highlightcolor="black")
+
+
+
+
         self.btnUpload.configure(pady="0")
         self.btnUpload.configure(text="""Upload""")
 
-        self.btnGetCookies2 = tk.Button(self.TNotebook1_t1)
+        self.btnGetCookies2 = customtkinter.CTkButton(self.TNotebook1_t1)
         self.btnGetCookies2.place(relx=0.45, rely=0.881, height=34, width=107)
-        self.btnGetCookies2.configure(activebackground="#ececec")
-        self.btnGetCookies2.configure(activeforeground="#000000")
-        self.btnGetCookies2.configure(background="#d9d9d9")
+
+
+
         self.btnGetCookies2.configure(compound="left")
-        self.btnGetCookies2.configure(disabledforeground="#a3a3a3")
-        self.btnGetCookies2.configure(foreground="#000000")
-        self.btnGetCookies2.configure(highlightbackground="#d9d9d9")
-        self.btnGetCookies2.configure(highlightcolor="black")
+
+
+
+
         self.btnGetCookies2.configure(pady="0")
         self.btnGetCookies2.configure(text="""Get Cookies""")
 
-        self.txtSoLuong = tk.Entry(self.TNotebook1_t2)
+        self.txtSoLuong = customtkinter.CTkEntry(self.TNotebook1_t2)
         self.txtSoLuong.place(relx=0.188, rely=0.023, height=21, relwidth=0.093)
-        self.txtSoLuong.configure(background="white")
-        self.txtSoLuong.configure(disabledforeground="#a3a3a3")
+
+
         self.txtSoLuong.configure(font="TkFixedFont")
-        self.txtSoLuong.configure(foreground="#000000")
-        self.txtSoLuong.configure(highlightbackground="#d9d9d9")
-        self.txtSoLuong.configure(highlightcolor="black")
-        self.txtSoLuong.configure(insertbackground="black")
-        self.txtSoLuong.configure(selectbackground="blue")
-        self.txtSoLuong.configure(selectforeground="white")
 
-        self.txtSoVideoToiDa = tk.Entry(self.TNotebook1_t2)
+
+
+
+
+
+
+        self.txtSoVideoToiDa = customtkinter.CTkEntry(self.TNotebook1_t2)
         self.txtSoVideoToiDa.place(relx=0.188, rely=0.072, height=21, relwidth=0.093)
-        self.txtSoVideoToiDa.configure(background="white")
-        self.txtSoVideoToiDa.configure(disabledforeground="#a3a3a3")
-        self.txtSoVideoToiDa.configure(font="TkFixedFont")
-        self.txtSoVideoToiDa.configure(foreground="#000000")
-        self.txtSoVideoToiDa.configure(highlightbackground="#d9d9d9")
-        self.txtSoVideoToiDa.configure(highlightcolor="black")
-        self.txtSoVideoToiDa.configure(insertbackground="black")
-        self.txtSoVideoToiDa.configure(selectbackground="blue")
-        self.txtSoVideoToiDa.configure(selectforeground="white")
 
-        self.txtKeyactive = tk.Entry(self.TNotebook1_t2)
+
+        self.txtSoVideoToiDa.configure(font="TkFixedFont")
+
+
+
+
+
+
+
+        self.txtKeyactive = customtkinter.CTkEntry(self.TNotebook1_t2)
         self.txtKeyactive.place(relx=0.188, rely=0.126, height=21, relwidth=0.343)
-        self.txtKeyactive.configure(background="white")
-        self.txtKeyactive.configure(disabledforeground="#a3a3a3")
+
+
         self.txtKeyactive.configure(font="TkFixedFont")
-        self.txtKeyactive.configure(foreground="#000000")
-        self.txtKeyactive.configure(highlightbackground="#d9d9d9")
-        self.txtKeyactive.configure(highlightcolor="black")
-        self.txtKeyactive.configure(insertbackground="black")
-        self.txtKeyactive.configure(selectbackground="blue")
-        self.txtKeyactive.configure(selectforeground="white")
+
+
+
+
+
+
 
         self.check1 = tk.Checkbutton(self.TNotebook1_t2)
         self.check1.place(relx=0.013, rely=0.186, relheight=0.058, relwidth=0.165)
-        self.check1.configure(activebackground="#ececec")
-        self.check1.configure(activeforeground="#000000")
+
+
         self.check1.configure(anchor="w")
-        self.check1.configure(background="#d9d9d9")
+
         self.check1.configure(compound="left")
-        self.check1.configure(disabledforeground="#a3a3a3")
-        self.check1.configure(foreground="#000000")
-        self.check1.configure(highlightbackground="#d9d9d9")
-        self.check1.configure(highlightcolor="black")
+
+
+
+
         self.check1.configure(justify="left")
         self.check1.configure(text="""Bình luận và ghim""")
         self.check1.configure(variable=self.checkCommentGhim)
 
         self.Message1 = tk.Message(self.TNotebook1_t2)
         self.Message1.place(relx=0.0, rely=0.023, relheight=0.044, relwidth=0.088)
-        self.Message1.configure(background="#d9d9d9")
-        self.Message1.configure(foreground="#000000")
-        self.Message1.configure(highlightbackground="#d9d9d9")
-        self.Message1.configure(highlightcolor="black")
+
+
+
+
         self.Message1.configure(padx="1")
         self.Message1.configure(pady="1")
         self.Message1.configure(text="""Số luồng""")
@@ -206,10 +206,10 @@ class Toplevel1:
         self.Message2 = tk.Message(self.TNotebook1_t2)
         self.Message2.place(relx=0.0, rely=0.075, relheight=0.044, relwidth=0.12)
 
-        self.Message2.configure(background="#d9d9d9")
-        self.Message2.configure(foreground="#000000")
-        self.Message2.configure(highlightbackground="#d9d9d9")
-        self.Message2.configure(highlightcolor="black")
+
+
+
+
         self.Message2.configure(padx="1")
         self.Message2.configure(pady="1")
         self.Message2.configure(text="""Số video tối đa""")
@@ -217,10 +217,10 @@ class Toplevel1:
 
         self.Message3 = tk.Message(self.TNotebook1_t2)
         self.Message3.place(relx=0.0, rely=0.128, relheight=0.044, relwidth=0.113)
-        self.Message3.configure(background="#d9d9d9")
-        self.Message3.configure(foreground="#000000")
-        self.Message3.configure(highlightbackground="#d9d9d9")
-        self.Message3.configure(highlightcolor="black")
+
+
+
+
         self.Message3.configure(padx="1")
         self.Message3.configure(pady="1")
         self.Message3.configure(text="""Key kích hoạt""")
@@ -228,10 +228,10 @@ class Toplevel1:
 
         self.Message3_1 = tk.Message(self.TNotebook1_t2)
         self.Message3_1.place(relx=0.0, rely=0.256, relheight=0.044, relwidth=0.063)
-        self.Message3_1.configure(background="#d9d9d9")
-        self.Message3_1.configure(foreground="#000000")
-        self.Message3_1.configure(highlightbackground="#d9d9d9")
-        self.Message3_1.configure(highlightcolor="black")
+
+
+
+
         self.Message3_1.configure(padx="1")
         self.Message3_1.configure(pady="1")
         self.Message3_1.configure(text="""Proxy""")
@@ -244,57 +244,57 @@ class Toplevel1:
 
         self.check1_1 = tk.Checkbutton(self.TNotebook1_t2)
         self.check1_1.place(relx=0.188, rely=0.186, relheight=0.058, relwidth=0.165)
-        self.check1_1.configure(activebackground="#ececec")
-        self.check1_1.configure(activeforeground="#000000")
+
+
         self.check1_1.configure(anchor="w")
-        self.check1_1.configure(background="#d9d9d9")
+
         self.check1_1.configure(compound="left")
-        self.check1_1.configure(disabledforeground="#a3a3a3")
-        self.check1_1.configure(foreground="#000000")
-        self.check1_1.configure(highlightbackground="#d9d9d9")
-        self.check1_1.configure(highlightcolor="black")
+
+
+
+
         self.check1_1.configure(justify="left")
         self.check1_1.configure(text="""Render video""")
         self.check1_1.configure(variable=self.checkRenderVideo)
 
         self.txtLog = tk.Text(self.TNotebook1_t3)
         self.txtLog.place(relx=0.0, rely=0.028, relheight=0.97, relwidth=0.995)
-        self.txtLog.configure(background="white")
+
         self.txtLog.configure(font="TkTextFont")
-        self.txtLog.configure(foreground="black")
-        self.txtLog.configure(highlightbackground="#d9d9d9")
-        self.txtLog.configure(highlightcolor="black")
-        self.txtLog.configure(insertbackground="black")
-        self.txtLog.configure(selectbackground="blue")
-        self.txtLog.configure(selectforeground="white")
+
+
+
+
+
+
         self.txtLog.configure(wrap="word")
 
         self.menubar = tk.Menu(top, font="TkMenuFont", bg=_bgcolor, fg=_fgcolor)
         top.configure(menu=self.menubar)
 
-        self.txtStatus = tk.Entry(self.top)
+        self.txtStatus = customtkinter.CTkEntry(self.top)
         self.txtStatus.place(relx=0.012, rely=0.933, height=20, relwidth=0.478)
-        self.txtStatus.configure(background="white")
-        self.txtStatus.configure(disabledforeground="#a3a3a3")
-        self.txtStatus.configure(font="TkFixedFont")
-        self.txtStatus.configure(foreground="#000000")
-        self.txtStatus.configure(highlightbackground="#d9d9d9")
-        self.txtStatus.configure(highlightcolor="black")
-        self.txtStatus.configure(insertbackground="black")
-        self.txtStatus.configure(selectbackground="blue")
-        self.txtStatus.configure(selectforeground="white")
 
-        self.txtHsd = tk.Entry(self.top)
+
+        self.txtStatus.configure(font="TkFixedFont")
+
+
+
+
+
+
+
+        self.txtHsd = customtkinter.CTkEntry(self.top)
         self.txtHsd.place(relx=0.498, rely=0.933, height=20, relwidth=0.49)
-        self.txtHsd.configure(background="white")
-        self.txtHsd.configure(disabledforeground="#a3a3a3")
+
+
         self.txtHsd.configure(font="TkFixedFont")
-        self.txtHsd.configure(foreground="#000000")
-        self.txtHsd.configure(highlightbackground="#d9d9d9")
-        self.txtHsd.configure(highlightcolor="black")
-        self.txtHsd.configure(insertbackground="black")
-        self.txtHsd.configure(selectbackground="blue")
-        self.txtHsd.configure(selectforeground="white")
+
+
+
+
+
+
 
 
 # The following code is added to facilitate the Scrolled widgets you specified.
@@ -352,7 +352,7 @@ def _create_container(func):
     place the scrollbars and the widget."""
 
     def wrapped(cls, master, **kw):
-        container = ttk.Frame(master)
+        container = customtkinter.CTkFrame(master)
         container.bind("<Enter>", lambda e: _bound_to_mousewheel(e, container))
         container.bind("<Leave>", lambda e: _unbound_to_mousewheel(e, container))
         return func(cls, container, **kw)
