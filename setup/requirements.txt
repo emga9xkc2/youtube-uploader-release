@@ -11,4 +11,4 @@ psutil
 pynput
 numpy
 asyncio
-customtkinter
+customtkinter==3.11
